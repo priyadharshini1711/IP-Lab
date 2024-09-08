@@ -1,0 +1,26 @@
+<html>
+<title> Image Mapping</title>
+
+<body>
+
+    <body>
+        <img src="D:\IP-LAB\004.ImageMapping\indiamap2.gif" usemap="#India" height="700" width="800"
+            style="align-items: center; justify-content: center;">
+        <map name="India">
+            <area href="tamilnadu.html" shape="circle" coords="295,650,40" style="background-color: black">
+            <area href="andhra.html" shape="circle" coords="295,500,40">
+            <area href="karnataka.html" shape="circle" coords="224,500,40">
+            <area href="kerala.html" shape="circle" coords="224,644,40">
+
+        </map>
+    </body>
+    <script>
+        document.onmouseover = function (e) {
+            var x = e.pageX;
+            var y = e.pageY;
+            e.target.title = "X is " + x + " and Y is " + y;
+            console.log("X is " + x + " and Y is " + y)
+        };
+    </script>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VALIDATION CHECKING</title>
+</head>
+
+<body>
+
+    <script language="javascript">
+        function passwordstrength(password) {
+            var str1 = "strong";
+            var str2 = "weak";
+            if (password.length > 6)
+                document.getElementById("password description").innerHTML = str1;
+            else
+                document.getElementById("password description").innerHTML = str2;
+        }
+        function a() {
+            var i = document.form1.uname.value;
+            var a = i.length;
+            var j = document.form1.pass.value;
+            var b = j.length;
+            if (a == 0 && b == 0)
+                window.alert("Enter username & password");
+            else {
+                if (a == 0)
+                    window.alert("Enter username ");
+                if (b == 0)
+                    window.alert("Enter  password");
+            }
+            if (a != 0 && b != 0 && b < 7)
+                window.alert("Password is too short");
+            if (a != 0 && b != 0 && b > 7)
+                window.alert("Username and Password Accepted Successfully");
+            document.getElementById("form1").reset();
+
+        }
+    </script>
+
+    <body>
+        <form name="form1" id="form1"><br>
+            Username<input type="text" name="uname"><br>
+            Password<input type="password" name="pass" onkeyup="passwordstrength(this.value)">
+            <label id="password description">Password not entered</label>
+            <input type="button" onclick="a()" value="submit">
+        </form>
+
+
+    </body>
+
+</html>

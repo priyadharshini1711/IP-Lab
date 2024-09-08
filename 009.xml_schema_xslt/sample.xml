@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="eg.xsl"?>
+<breakfast_menu>
+    <food>
+        <name>Dosa</name>
+        <price>Rs.5.95</price>
+        <calories>650</calories>
+    </food>
+    <food>
+        <name>Idly</name>
+        <price>Rs.7.95</price>
+        <calories>700</calories>
+    </food>
+    <food>
+        <name>Puri</name>
+        <price>Rs.8.95</price>
+        <calories>900</calories>
+    </food>
+    <food>
+        <name>French Toast</name>
+        <price>Rs.50.</price>
+        <calories>600</calories>
+    </food>
+    <food>
+        <name>Pongal</name>
+        <price>Rs.6.95</price>
+        <calories>950</calories>
+    </food>
+</breakfast_menu>

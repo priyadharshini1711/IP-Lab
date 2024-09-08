@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XML with HTML</title>
+</head>
+
+<body>
+
+    <h1>Internal Note</h1>
+    <button type="button" onclick="loadXMLDoc()">Get my email details</button>
+    <div>
+        <br />
+        <b>To:</b><span id="to"></span><br />
+        <b>From:</b><span id="from"></span><br />
+        <b>Heading:</b><span id="heading"></span><br />
+        <b>Message:</b><span id="message"></span><br />
+    </div>
+    <script crossorigin="anonymous">
+        function loadXMLDoc() {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    myFunction(this);
+                }
+            };
+            xmlhttp.open("GET", "Note.xml", true);
+            xmlhttp.send();
+        }
+        function myFunction(xml) {
+            var i;
+            var xmlDoc = xml.responseXML;
+            console.log("value", xmlDoc)
+            document.getElementById("to").innerHTML =
+                xmlDoc.getElementsByTagName("to")[0].childNodes[0].nodeValue;
+            document.getElementById("from").innerHTML =
+                xmlDoc.getElementsByTagName("from")[0].childNodes[0].nodeValue;
+            document.getElementById("heading").innerHTML =
+                xmlDoc.getElementsByTagName("heading")[0].childNodes[0].nodeValue;
+            document.getElementById("message").innerHTML =
+                xmlDoc.getElementsByTagName("body")[0].childNodes[0].nodeValue;
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
